@@ -1,0 +1,148 @@
+body {
+  background: #141518;
+  font-family: "Oswald", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.index {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  background: black !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.bg-image {
+  color: white;
+  min-height: 30rem;
+  width: 100%;
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), url("/img/background.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+  }
+
+  .masthead h1 {
+    font-size: 5.5rem;
+  }
+}
+
+/* Estilos para la tabla */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa; /* Color de fondo del encabezado */
+}
+
+/* Estilos para las filas impares */
+.table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Fondo alternado para filas impares */
+}
+
+/* Estilos para las imágenes en la tabla */
+.table img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: auto; /* Centrar la imagen en la celda */
+}
+
+/* Estilos para los botones de acción en la columna de acciones */
+.table .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Estilo para los botones de acción */
+.table .action-buttons a {
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.table .action-buttons a:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+
+/* Estilo para el texto dentro de la tabla */
+.table {
+  color: #ffffff; /* Color de texto general */
+}
+
+.table th,
+.table td {
+  color: #ebeff2; /* Color de texto en celdas */
+}
+
+/* Estilo para el encabezado de columna */
+.table thead th {
+  color: #212529; /* Color de texto en encabezados */
+}
+
+/* Estilo para las filas impares */
+.table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Fondo alternado para filas impares */
+}
+
+/* Estilo para los botones de acción en la columna de acciones */
+.table .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Estilo para los botones de acción */
+.table .action-buttons a {
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  color: #fff; /* Color de texto en botones */
+}
+
+.table .action-buttons a:hover {
+  background-color: #007bff;
+  color: #fff; /* Color de texto al pasar el ratón */
+  border-color: #007bff;
+}

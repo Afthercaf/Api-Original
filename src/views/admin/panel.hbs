@@ -1,0 +1,89 @@
+<h1>Admin Panel</h1>
+
+<ul>
+<div class="container p-4 h-100">
+  <div class="row h-75 d-flex align-items-center">
+    <div class="col-md-6 mx-auto">
+      <div class="card bg-dark">
+        <form action="/admin/add-product" method="POST" enctype="multipart/form-data" class="card-body">
+          <!-- Título y botón de guardar -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-light mb-3 h4">Crear un Nuevo Producto</h1>
+            <button class="btn btn-success btn-block">Guardar</button>
+          </div>
+
+          <label for="name">Nombre del producto:</label>
+          <input type="text" name="name" class="form-control bg-dark text-light mb-3" placeholder="Nombre" autofocus />
+
+          <label for="description">Descripción:</label>
+          <textarea name="description" rows="2" class="form-control bg-dark text-light mb-3" placeholder="Descripción"></textarea>
+
+          <label for="price">Precio:</label>
+          <input type="number" name="price" step="0.01" class="form-control bg-dark text-light mb-3" placeholder="Precio" />
+
+          <label for="image">Imagen:</label>
+          <input type="file" name="image" class="form-control-file bg-dark text-light mb-3" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table id="productTable" class="table">
+    <thead>
+        <tr>
+            <th>Producto ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.description}}</td>
+            <td><img src="/img/{{this.image}}" alt="Imagen del Producto" style="width: 100px; height: auto;"></td>
+            <td>
+                <!-- Aquí puedes agregar botones para acciones como editar, eliminar, etc. -->
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</ul>
+<h1>Actualizar Productos</h1>
+<ul>
+    {{#each products}}
+    <li>
+        <form action="/admin/products/update" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input type="text" name="name" value="{{this.name}}" required>
+            <textarea name="description">{{this.description}}</textarea>
+            <input type="number" name="price" value="{{this.price}}" required>
+            <input type="file" name="image">
+            <input type="hidden" name="current_image" value="{{this.image}}">
+            <button type="submit">Actualizar</button>
+        </form>
+        <a href="/admin/products/delete/{{this.id}}">Eliminar</a>
+    </li>
+    {{/each}}
+</ul>
+
+<h1>Administrar Usuarios</h1>
+<ul>
+    {{#each users}}
+    <li>{{this.fullname}} - {{this.email}} <a href="/admin/users/delete/{{this.id}}">Eliminar</a></li>
+    {{/each}}
+</ul>
+
+<h1>Registros de Auditoría</h1>
+<ul>
+    {{#each logs}}
+    <li>ID de Usuario: {{this.user_id}} - Acción: {{this.action}} - Marca de Tiempo: {{this.timestamp}}</li>
+    {{/each}}
+</ul>
